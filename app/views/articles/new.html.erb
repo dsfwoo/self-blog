@@ -1,9 +1,15 @@
 <h1>Add article</h1>
 
-<%= form_with model: @article, local: true do |f| %>
-<%= f.label :title, "姓名" %>
-<%= f.text_field :title %> <br />
+<%= form_with model: @article, local: true do |form| %>
+<%= form.label :title, "標題" %>
+<%= form.text_field :title %> <br />
 
+<%= form.label :content, "內文" %>
+<%= form.rich_text_area :content %>
 
-<%= f.submit %>
+<%#= form.label :published %>
+<%#= form.check_box :published %>
+<%= form.submit %>
 <% end %>
+
+<%= link_to 'back', articles_path %>
